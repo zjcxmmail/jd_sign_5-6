@@ -69,7 +69,7 @@ async function start() {
     let res2 = t2 ? t2[1].replace(/\n/,'') : '总计0'
 
     
-    await sendNotify("" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
+    await sendNotify("京东签到5、6-" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
   }
 }
 
