@@ -69,12 +69,7 @@ async function start() {
     let res2 = t2 ? t2[1].replace(/\n/,'') : '总计0'
     
 //  await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
-    
-    timestamp = new Date(Date.parse(new_datetime));
-    timestamp = timestamp.getTime();
-    timestamp = timestamp/1000;
-    var timestamp = timestamp+8*60*60;  // 增加8个小时，北京时间比utc时间多八个时区
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + ` ${timestamp} ` , content);
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date('2019-05-28T09:00:20.000Z').toLocaleTimeString(), content);
   }
 }
 
