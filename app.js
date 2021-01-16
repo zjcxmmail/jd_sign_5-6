@@ -69,7 +69,14 @@ async function start() {
     let res2 = t2 ? t2[1].replace(/\n/,'') : '总计0'
     
 //  await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleTimeString('chinese',{hour12:false}), content);
+    
+def run():
+    utc_dt = datetime.utcnow()  # UTC时间
+    bj_dt = utc_dt+timedelta(hours=8)  # 北京时间
+    _datatime = bj_dt.strftime("%Y-%m-%d", )
+    now = bj_dt.strftime("%Y-%m-%d %H:%M:%S")
+      
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + ` {now} ` , content);
   }
 }
 
