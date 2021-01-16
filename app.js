@@ -69,7 +69,7 @@ async function start() {
     let res2 = t2 ? t2[1].replace(/\n/,'') : '总计0'
     
 //  await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleTimeString('chinese'), content);
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleTimeString('chinese',{hour12:false}), content);
   }
 }
 
