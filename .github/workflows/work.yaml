@@ -1,4 +1,4 @@
-name: 京东签到 //Github JD-sign bot
+name: 京东签到
 
 on:
     push:
@@ -17,7 +17,7 @@ jobs:
               uses: actions/setup-node@v1
               with:
                 node-version: '12.x'
-            - name: Run app
+            - name: 运行【京东签到】
               run: npm install
             - run: node app.js
               env:
