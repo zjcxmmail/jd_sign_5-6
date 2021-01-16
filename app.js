@@ -76,7 +76,7 @@ def run():
     _datatime = bj_dt.strftime("%Y-%m-%d", )
     now = bj_dt.strftime("%Y-%m-%d %H:%M:%S")
       
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + ` {now} ` , content);
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + ` ${now} ` , content);
   }
 }
 
