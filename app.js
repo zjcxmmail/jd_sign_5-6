@@ -67,18 +67,9 @@ async function start() {
     let res = t ? t[1].replace(/\n/,'') : '失败'
     let t2 = content.match(/【签到总计】:((.|\n)*)【账号总计】/)
     let res2 = t2 ? t2[1].replace(/\n/,'') : '总计0'
-
-//    初始化日志
-//    sio = StringIO('WPS签到日志\n\n')
-//    sio.seek(0, 2)  # 将读写位置移动到结尾
-//    s = requests.session()
-//    tz = pytz.timezone('Asia/Shanghai')
-//    nowtime = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-//    sio.write("--------------------------"+nowtime+"----------------------------\n\n")
-    
     
 //    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S"), content);
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date(year, month, date, hrs, min, sec).toLocaleDateString(), content);
   }
 }
 
