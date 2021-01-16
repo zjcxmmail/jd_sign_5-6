@@ -70,7 +70,6 @@ async function start() {
     
 //  await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
     
-def run():
     utc_dt = datetime.utcnow()  # UTC时间
     bj_dt = utc_dt+timedelta(hours=8)  # 北京时间
     _datatime = bj_dt.strftime("%Y-%m-%d", )
