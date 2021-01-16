@@ -70,11 +70,11 @@ async function start() {
     
 //  await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
     
-    utc_dt = datetime.utcnow()  //  UTC时间
-    bj_dt = utc_dt+timedelta(hours=8)  //  北京时间
-    _datatime = bj_dt.strftime("%Y-%m-%d", )
-    now = bj_dt.strftime("%Y-%m-%d %H:%M:%S")
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + ` ${now} ` , content);
+    timestamp = new Date(Date.parse(new_datetime));
+    timestamp = timestamp.getTime();
+    timestamp = timestamp/1000;
+    var timestamp = timestamp+8*60*60;  // 增加8个小时，北京时间比utc时间多八个时区
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + ` ${timestamp} ` , content);
   }
 }
 
