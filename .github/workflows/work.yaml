@@ -1,4 +1,4 @@
-name: Github JD-sign bot
+name: 京东签到 //Github JD-sign bot
 
 on:
     push:
