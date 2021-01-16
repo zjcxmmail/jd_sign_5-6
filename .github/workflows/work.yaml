@@ -17,9 +17,10 @@ jobs:
               uses: actions/setup-node@v1
               with:
                 node-version: '12.x'
-            - name: 运行【京东签到】
+            - name: 安装依赖
               run: npm install
-            - run: node app.js
+            - name: 运行【京东签到】
+              run: node app.js
               env:
                 JD_COOKIE: ${{ secrets.JD_COOKIE }}
                 JD_COOKIE_2: ${{ secrets.JD_COOKIE_2 }} 
