@@ -77,7 +77,7 @@ async function dateFormat() {
   return // t_Date.Format('yyyy.MM.dd')
 }
       
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date('2019-05-28T09:00:20.000Z').toLocaleTimeString(), content); 
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date('2019-05-28T09:00:20.000Z').toLocaleDateString(), content); 
 //  await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
   }
 }
