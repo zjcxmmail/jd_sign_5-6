@@ -77,7 +77,7 @@ async function start() {
     return t_Date.Format('yyyy.MM.dd')
 }
     let text = "jd_sign_5_6京东签到_" + dateFormat();     
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + ` ${dateFormat()} `;, content); 
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + ` ${text} `;, content); 
 //  await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
   }
 }
