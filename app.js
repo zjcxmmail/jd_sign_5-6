@@ -68,13 +68,13 @@ async function start() {
     let t2 = content.match(/【签到总计】:((.|\n)*)【账号总计】/)
     let res2 = t2 ? t2[1].replace(/\n/,'') : '总计0'
 
-  function dateFormat() {
+ async function dateFormat() {
     var timezone = 8;
     var GMT_offset = new Date().getTimezoneOffset();
     var n_Date = new Date().getTime();
     var t_Date = new Date(n_Date + GMT_offset * 60 * 1000 + timezone * 60 * 60 * 1000);
     console.log(t_Date)
-    return Date.Format('yyyyMMdd')
+    return t_Date.Format('yyyyMMdd')
   }
     let text1 = dateFormat();     
     await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` +  ` ${text1} `, content); 
