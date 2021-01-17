@@ -68,16 +68,16 @@ async function start() {
     let t2 = content.match(/【签到总计】:((.|\n)*)【账号总计】/)
     let res2 = t2 ? t2[1].replace(/\n/,'') : '总计0'
 
-async function FormatTimeAddHour(oldTimes1) {
-    var time1 = oldTimes1.split(' ')[0];
-    var arrTime = oldTimes1.split(' ')[1].split(':');
-    var time2 = arrTime.slice(1, arrTime.length).join(':');
-    var h = parseInt(arrTime[0]) + 8;
-    var newH = ((h < 24) ? h : (h % 24)).toString();
-    return time1 + ' ' + newH + ':' + time2;
-    };
+async function dateFormat() {
+  var timezone = 8;
+  var GMT_offset = new Date().getTimezoneOffset();
+  var n_Date = new Date().getTime();
+  var t_Date = new Date(n_Date + GMT_offset * 60 * 1000 + timezone * 60 * 60 * 1000);
+  console.log(t_Date)
+  return t_Date.Format('yyyy.MM.dd')
+}
       
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().FormatTimeAddHour(), content); 
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + dateFormat(), content); 
 //  await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
   }
 }
