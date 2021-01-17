@@ -68,16 +68,22 @@ async function start() {
     let t2 = content.match(/【签到总计】:((.|\n)*)【账号总计】/)
     let res2 = t2 ? t2[1].replace(/\n/,'') : '总计0'
 
- async function dateFormat() {
-    var timezone = 8;
-    var GMT_offset = new Date().getTimezoneOffset();
-    var n_Date = new Date().getTime();
-    var t_Date = new Date(n_Date + GMT_offset * 60 * 1000 + timezone * 60 * 60 * 1000);
-    console.log(t_Date)
-    return t_Date.Format('yyyy.MM.dd')
-  }
-    const text1 = dateFormat();     
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleString(), content); 
+ public static String formatTimeEight(String time) throws Exception {
+       Date d = null;
+       SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+       d = sd.parse(time);
+       long rightTime = (long) (d.getTime() + 8 * 60 * 60 * 1000); 
+   //把当前得到的时间用date.getTime()的方法写成时间戳的形式，再加上8小时对应的毫秒数
+    String newtime = sd.format(rightTime);
+   //把得到的新的时间戳再次格式化成时间的格式
+     return newtime;
+    }
+    
+   //注意的是，要加上异常处理，try catch应该也是可以的。 
+   //使用方法就是：
+   String newtime =MyDate.formatTimeEight(mytime);
+      
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + MyDate.formatTimeEight(mytime), content); 
 //  await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
   }
 }
