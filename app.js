@@ -77,7 +77,7 @@ async function FormatTimeAddHour(oldTimes1) {
     return time1 + ' ' + newH + ':' + time2;
     };
       
-    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().FormatTimeAddHour(oldTimes1), content); 
+    await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().FormatTimeAddHour(), content); 
 //  await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
   }
 }
