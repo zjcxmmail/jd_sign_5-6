@@ -74,7 +74,7 @@ async function start() {
     var n_Date = new Date().getTime();
     var t_Date = new Date(n_Date + GMT_offset * 60 * 1000 + timezone * 60 * 60 * 1000);
     console.log(t_Date)
-    return t_Date.Format('yyyyMMdd')
+    return t_dateFormat('yyyyMMdd')
   }
     const text1 = dateFormat();     
     await sendNotify("jd_sign_5_6京东签到_" + "" + ` ${res2} ` + ` ${res} ` +  dateFormat(), content); 
